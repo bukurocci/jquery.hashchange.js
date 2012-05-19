@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0074)http://dl.dropbox.com/u/64896607/appendix/hashchange_event/test/index.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-script-type" content="text/javascript">
+<title>Hashchange Event Test</title>
+<script type="text/javascript" src="./Hashchange Event Test_files/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./Hashchange Event Test_files/jquery.event.hashchange.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+	var $window = $(window);
+	var $box = $('#box');
+	
+	$window.bind('hashchange', function(evt) {
+		var fragment = evt.hashFragment;
+		if(fragment === 'red') {
+			$box.css({'background-color': '#f00'});
+		} else if (fragment === 'green') {
+			$box.css({'background-color': '#0f0'});
+		} else if (fragment === 'blue') {
+			$box.css({'background-color': '#00f'});
+		} else {
+			$box.css({'background-color': '#fff'});
+		}
+		
+	});
+	
+	
+	$window.trigger('hashchange');
+})
+</script>
+<style type="text/css">
+<!--
+	* { margin:0; padding: 0; }
+	
+	h1 {
+		margin: 0 0 10px;
+	}
+	
+	ul {
+		padding: 20px;
+		/zoom: 1;
+	}
+	
+	ul li {
+		margin: 0 20px 0 0;
+		list-style-type: circle;
+	}
+	#wrapper {
+		margin: 30px;
+	}
+	
+	#box {
+		clear: both;
+		margin: 20px 0;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		
+		width: 500px;
+		height: 500px;
+	}
+--> 
+</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+<h1>Hashchange Event Test</h1>
+<p>window.onhashchange がないIE6/IE7でも hashchange イベントをサポートします。</p>
+<ul>
+<li><a href="http://dl.dropbox.com/u/64896607/appendix/hashchange_event/test/index.html#red">RED</a></li>
+<li><a href="http://dl.dropbox.com/u/64896607/appendix/hashchange_event/test/index.html#green">GREEN</a></li>
+<li><a href="http://dl.dropbox.com/u/64896607/appendix/hashchange_event/test/index.html#blue">BLUE</a></li>
+
+</ul>
+
+<div id="box" style="background-color: rgb(255, 255, 255); ">
+
+
+</div>
+
+<p>ソースコード<br>
+<a href="./Hashchange Event Test_files/jquery.event.hashchange.js">jquery.event.hashchange.js</a></p>
+
+</div>
+
+
+<div id="shader" style="display: none;"><div id="kaspersky_popup"><a id="yeslink" wotsearchprocessed="true"><div class="leftside"></div><div class="middleside">続行</div><div class="rightside"></div></a><a id="nolink" wotsearchprocessed="true"><div class="leftside"></div><div class="middleside">戻る</div><div class="rightside"></div></a><div id="popuptitle"></div><div id="popupmessage"></div></div></div></body></html>
